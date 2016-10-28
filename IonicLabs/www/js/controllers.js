@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopup) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -15,11 +15,29 @@ angular.module('starter.controllers', [])
 
   $scope.dayClick = function(date, jsEvent, view, resourceObj) {
 
-    $(this).css('background-color', 'red');
+    $(this).css('background-color', 'gold');
+    $scope.showAlert();
+    css('background-color', 'white');
     alert('Date: ' + date.format());
     alert('Resource ID: ' + resourceObj.id);
 
     }
+    //working:
+    //https://www.tutorialspoint.com/ionic/ionic_js_popup.htm
+    //need to implement:
+    //http://ionicframework.com/docs/api/service/$ionicPopover/
+   $scope.showAlert = function() {
+	
+      var alertPopup = $ionicPopup.alert({
+         title: 'Title',
+         template: 'Alert message'
+      });
+
+      alertPopup.then(function(res) {
+         // Custom functionality....
+      });
+   };
+
   $scope.uiConfig = {
       calendar:{
         height: 600,
