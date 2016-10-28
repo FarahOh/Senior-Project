@@ -13,6 +13,37 @@ angular.module('starter.controllers', [])
   //CALENDAR!
   $scope.eventSources = [];
 
+  $scope.dayClick = function(date, jsEvent, view, resourceObj) {
+
+    $(this).css('background-color', 'red');
+    alert('Date: ' + date.format());
+    alert('Resource ID: ' + resourceObj.id);
+
+    }
+  $scope.uiConfig = {
+      calendar:{
+        height: 600,
+        editable: true,
+        header:{
+          right: 'today prev,next'
+        },
+        eventClick: $scope.alertEventOnClick,
+        eventDrop: $scope.alertOnDrop,
+        eventResize: $scope.alertOnResize,
+        dayClick: $scope.dayClick
+      }
+    };
+
+
+
+  $scope.calendarConfig = {
+  calendar:{
+        viewRender: function(view, element) {
+            $log.debug("View Changed: ", view.visStart, view.visEnd, view.start, view.end);
+        }
+    }
+  };
+
 
   // Form data for the login modal
   $scope.loginData = {};
