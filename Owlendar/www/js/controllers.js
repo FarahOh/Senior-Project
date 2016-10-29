@@ -59,7 +59,7 @@ angular.module('starter.controllers', [])
     //alert('Date: ' + date.format('ddd, MMMM DD, YYYY '));
     //alert('Resource ID: ' + resourceObj.id);
 
-    }
+  }
 
 
   // .fromTemplateUrl() method
