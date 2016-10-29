@@ -16,15 +16,15 @@
     <ion-header-bar class="bar bar-header bar-dark">
       <h1 class="title">Links</h1>
     </ion-header-bar>
-    <ion-content scroll="false">
+    <ion-content scroll="true">
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+        <ion-item menu-close onClick="window.open('http://www.google.com','_blank');return false;">
           Link 1
         </ion-item>
-        <ion-item menu-close href="#/app/search">
+        <ion-item menu-close onClick="window.open('http://www.google.com','_blank');return false;">
           Link 2
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
+        <ion-item menu-close onClick="window.open('http://www.google.com','_blank');return false;">
           Link 3
         </ion-item>
         <ion-item menu-close href="#/app/calendar">
