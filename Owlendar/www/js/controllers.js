@@ -6,21 +6,55 @@ angular.module('starter.controllers', [])
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
-  $scope.$on('$ionicView.enter', function(e) {
-  });
+  // $scope.$on('$ionicView.enter', function(e) {
+  // });
 
 
   //CALENDAR!
-  $scope.eventSources = [];
+  //https://fullcalendar.io/docs/event_data/eventSources/
+  $scope.eventSources = [
+    
+        // your event source
+        {
+            events: [ // put the array in the `events` property
+                {
+                    title  : 'event1',
+                    start  : '2016-10-11'
+                },
+                {
+                    title  : 'event2',
+                    start  : '2016-10-11',
+                    end    : '2016-10-14'
+                },
+                {
+                    title  : 'event3',
+                    start  : '2016-10-09T12:30:00',
+                }
+            ],
+            color: 'black',     // an option!
+            textColor: 'white' // an option!
+        }
 
+        // any other event sources...
 
+  ];
 
-
+  
 
   $scope.dayClick = function(date, jsEvent, view, resourceObj) {
 
-    $(this).css('background-color', 'gold');
+    //$(this).css('background-color', 'gold');
     $scope.theDate = date.format('ddd, MMMM DD, YYYY ');
+
+
+    //https://fullcalendar.io/docs/event_data/clientEvents/
+    $scope.eventsForToday = $('#calendar').fullCalendar('clientEvents', [])
+
+    //$scope.eventsForToday = uiConfig.calendar.myCalendar.fullCalendar('clientEvents', []);
+
+
+    //$scope.eventsForToday = myCalendar.fullCalendar('clientEvents', []);
+    //alert($('.calendar').fullCalendar('clientEvents', []));
     $scope.popover.show(jsEvent, $scope);
     //alert('Date: ' + date.format('ddd, MMMM DD, YYYY '));
     //alert('Resource ID: ' + resourceObj.id);
@@ -47,7 +81,9 @@ angular.module('starter.controllers', [])
         height: 600,
         editable: true,
         header:{
-          right: 'today prev,next'
+          left: 'prev',
+          center: 'title',
+          right: 'today, next'
         },
         eventClick: $scope.alertEventOnClick,
         eventDrop: $scope.alertOnDrop,

@@ -2,9 +2,22 @@
     <ion-header-bar>
       <h1 class="title">{{ theDate }}</h1>
     </ion-header-bar>
-    <ion-content scroll="false">
+    <ion-content scroll="true">
       List the events for this day
-      {{  }}
-
+      {{ eventsForToday }}
     </ion-content>
   </ion-popover-view>
+
+
+
+    <!--<ion-popover-view>
+    <ion-header-bar>
+      <h1 class="title">{{ theDate }}</h1>
+    </ion-header-bar>
+    <ion-content scroll="true" ng-repeat="event in eventsForToday">
+      List the events for this day
+      <ion-list>
+        <ion-item>{{ event }}</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-popover-view>-->
