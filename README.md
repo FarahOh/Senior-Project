@@ -30,8 +30,10 @@ Basically, we are creating a mobile app, "Student Engagement App," that is cross
 # Updates Section
 ##Format: Name: Week: Task
     Zach: 9/26/16: Worked on Software Requirements document
-    Kyle: 9/26/16: Worked on Software Requirements document
+    Kyle: 9/26/16: Worked on Software Requirements document.
     Farah: 9/26/16: Worked on Software Requirements document
     Mohini: 9/26/16: Worked on Software Requirements document    
 
     Zach: 10/10, 10/17/, 10/24, and 10/31: Working on App functionality. Created Working app with functionality.
+    
+    Kyle: 10/09/16: Created Design Document. 10/17, 10/24 Ionic/Cordova acclimation 
