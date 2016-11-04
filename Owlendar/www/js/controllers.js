@@ -19,20 +19,20 @@ angular.module('starter.controllers', [])
             events: [ // put the array in the `events` property
                 {
                     title  : 'event1',
-                    start  : '2016-10-11'
+                    start  : '2016-11-11'
                 },
                 {
                     title  : 'event2',
-                    start  : '2016-10-11',
-                    end    : '2016-10-14'
+                    start  : '2016-11-11',
+                    end    : '2016-11-14'
                 },
                 {
                     title  : 'event3',
-                    start  : '2016-10-09T12:30:00',
+                    start  : '2016-11-09T12:30:00',
                 }
             ],
-            color: 'black',     // an option!
-            textColor: 'white' // an option!
+            //color: 'black',     // an option!
+            //textColor: 'white' // an option!
         }
 
         // any other event sources...
