@@ -37,3 +37,6 @@ Basically, we are creating a mobile app, "Student Engagement App," that is cross
     Zach: 10/10, 10/17/, 10/24, and 10/31: Working on App functionality. Created Working app with functionality.
     
     Kyle: 10/09/16: Created Design Document. 10/17, 10/24 Ionic/Cordova acclimation 
+    
+    Zach/Kyle/Farah/Mohini: 11/4:  Meeting with sponsor to show status
+    Kyle: 11/3 : Updated color scheme
