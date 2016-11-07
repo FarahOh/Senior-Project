@@ -166,7 +166,11 @@ NOTE: use percentage font sizes or else old IE chokes
 	/* dimensions */
 	margin: 0;
 	height: 2.1em;
-	padding: 0 .6em;
+	width: auto;
+	/*padding: 0 .6em;*/
+	padding: 0.1;
+	
+	
 
 	/* text & cursor */
 	font-size: 1em; /* normalize */
@@ -839,10 +843,12 @@ a.fc-more:hover {
 	margin-left: 0;
 }
 	
-/* title text */
+/* title text DAY OF THE MONTH */
 
 .fc-toolbar h2 {
 	margin: 0;
+	font-size: 6vw;
+	text-align: center; /*not working*/
 }
 
 /* button layering (for border precedence) */

@@ -18,13 +18,13 @@ angular.module('starter.controllers', [])
         {
             events: [ // put the array in the `events` property
                 {
-                    title  : 'event1',
+                    title  : 'Day Event',
                     start  : '2016-11-11'
                 },
                 {
-                    title  : 'event2',
-                    start  : '2016-11-11',
-                    end    : '2016-11-14'
+                    title  : 'Week long test event',
+                    start  : '2016-11-14',
+                    end    : '2016-11-19'
                 },
                 {
                     title  : 'event3',
@@ -81,9 +81,9 @@ angular.module('starter.controllers', [])
         height: 600,
         editable: true,
         header:{
-          left: 'prev',
-          center: 'title',
-          right: 'today, next'
+          left: 'title',
+          //center: 'title',
+          right: 'prev, today, next'
         },
         eventClick: $scope.alertEventOnClick,
         eventDrop: $scope.alertOnDrop,
