@@ -57,3 +57,9 @@ Basically, we are creating a mobile app, "Student Engagement App," that is cross
     
     Zach/Kyle/Farah/Mohini: 11/4:  Meeting with sponsor to show status
     Kyle: 11/3 : Updated color scheme
+
+
+    Zach: 11/7 - 11/13/16: Worked on poster and app together!
+    Kyle: 11/7 - 11/13/16: Worked on poster and app together!
+    Farah: 11/7 - 11/13/16: Worked on poster and app together!
+    Mohini: 11/7 - 11/13/16: Worked on poster and app together!
