@@ -6,16 +6,33 @@ We choose a project in which we will carryout the duration of the semester.
 ##Project: 
 Basically, we are creating a mobile app, "Student Engagement App," that is cross-platform and beneficial for Kennesaw State        University, KSU, faculty & staff and students. This app will be crossplatform meaning it can be used on both iOS and Android devices. The main goal behind this app is to create a "master calendar" for the Department of Student Engagement at KSU (this will strictly be a prototype and will not be legally affiliated or maintained by KSU). 
 
-##Need To Do:
-        -When we get RSS feed, we parse and get event data: https://www.thepolyglotdeveloper.com/2014/12/use-ngstorage-angularjs-local-storage-needs/
-        -Store event data locally (local database system)
-        -Get clientEvents functionality working correctly.
-        -Get popover to display the events.
-        -Month location (Bootstrap)
-        -Calendar height to match screen height.
-        -Increase size of buttons
-        -Functionality to change app's colors (Personality requirement)
-        -Create functionality of when clicking an event, it goes to the day it is assigned to.
+##Need To Do-Assigned To:
+        ---When we get RSS feed, we parse and get event data: https://www.thepolyglotdeveloper.com/2014/12/use-ngstorage-angularjs-local-storage-needs/
+        --Grab data fields to find out which data we are going to use! (Whats given to us? What do we want to use?)
+        ---Store event data locally (local database system)
+        ---Get clientEvents functionality working correctly.
+        -Get popover to display the events.- Farah
+        --Ordered by time.
+        -Month location (Bootstrap) - Kyle (Done)
+        -Calendar height to match screen height. - Kyle
+        -Increase size of buttons and font. - Kyle
+        -Functionality to change app's colors (Personality requirement).- Kyle
+        --Later saves to device to rememeber!
+        -Ignore event press from calendar, goes to the day selected. - Mohini
+        ---Remove the drag feature on events.
+        -Create the action event "press event" within the popover, display another page with details/options. - Farah
+        -Items within menu to share height and fill screen. - Kyle
+        ---Figure out how to add event to calendar after signing up to volunteer - 
+        --Either add event manually, find some way to add via plugin(best way i see).
+        --notification of event
+        -Icons in the sandwich bar - Kyle
+        -Change the icon for the app (on the homescreen) - Farah
+        -Build poster/design poster(Start on it...) - Mohini/Farah
+
+##Deadlines:
+        -Kyle: Thursday (11/10)
+        -Farah: Thursday (11/10)
+        -Mohini: Saturday (11/12)
 
 ##Links:
         -https://www.thepolyglotdeveloper.com/2014/12/use-ngstorage-angularjs-local-storage-needs/
