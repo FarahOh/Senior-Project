@@ -79,6 +79,7 @@ angular.module('starter.controllers', [])
   $scope.uiConfig = {
       calendar:{
         height: 600,
+		
         editable: true,
         header:{
           left: 'title',
@@ -88,11 +89,17 @@ angular.module('starter.controllers', [])
         eventClick: $scope.alertEventOnClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize,
-        dayClick: $scope.dayClick
+        dayClick: $scope.dayClick,
+		windowResize:$scope.windowResize
       }
     };
 
-
+   //resize function //how to test?
+   $('#calendar').fullCalendar({
+    windowResize: function(view) {
+        alert('The calendar has adjusted to a window resize');//remove on release
+    }
+});
 
   $scope.calendarConfig = {
   calendar:{

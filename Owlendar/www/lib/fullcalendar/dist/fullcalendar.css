@@ -165,10 +165,12 @@ NOTE: use percentage font sizes or else old IE chokes
 
 	/* dimensions */
 	margin: 0;
-	height: 2.1em;
-	width: auto;
+	/*height: 2.1em;*/
+	height: 35px;
+	width: 45px;
 	/*padding: 0 .6em;*/
 	padding: 0.1;
+	margin-top:10px;
 	
 	
 
@@ -293,6 +295,7 @@ previous button's border...
 
 .fc-popover .fc-header .fc-title {
 	margin: 0 2px;
+	
 }
 
 .fc-popover .fc-header .fc-close {
@@ -844,11 +847,13 @@ a.fc-more:hover {
 }
 	
 /* title text DAY OF THE MONTH */
-
 .fc-toolbar h2 {
 	margin: 0;
-	font-size: 6vw;
+	font-size: 7.5vw;
 	text-align: center; /*not working*/
+	margin-top:10px;
+	
+	
 }
 
 /* button layering (for border precedence) */
@@ -1403,3 +1408,7 @@ be a descendant of the grid when it is being dragged.
 .fc-unthemed .fc-list-empty { /* theme will provide own background */
 	background-color: #eee;
 }
+
+/* Ionic sandwich bar
+--------------------------------------------------------------------------------------------------*/
+
