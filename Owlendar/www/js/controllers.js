@@ -18,17 +18,17 @@ angular.module('starter.controllers', [])
         {
             events: [ // put the array in the `events` property
                 {
-                    title  : 'Day Event',
+                    title  : 'Blood Drive',
                     start  : '2016-11-11'
                 },
                 {
-                    title  : 'Week long test event',
+                    title  : 'Finals Week',
                     start  : '2016-11-14',
                     end    : '2016-11-19'
                 },
                 {
-                    title  : 'event3',
-                    start  : '2016-11-09T12:30:00',
+                    title  : 'Zach Crys',
+                    start  : '2016-11-09',
                 }
             ],
             //color: 'black',     // an option!
@@ -141,17 +141,3 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
