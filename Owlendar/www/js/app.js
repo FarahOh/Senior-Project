@@ -42,7 +42,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.calendar'])
           templateUrl: 'templates/calendar.html'
         }
       }
-    });
+    })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/calendar');
 });
