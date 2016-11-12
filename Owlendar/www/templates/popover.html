@@ -1,22 +1,3 @@
- <!-- <ion-popover-view>
-    <ion-header-bar>
-      <h1 class="title">{{ theDate }}</h1>
-    </ion-header-bar>
-    <ion-nav-view name="details"></ion-nav-view>
-    <ion-content scroll="true">
-      <ion-list>
-        <button class="button button-full button-stable" id = 'event1Button' ng-click="modal.show()">
-            Event 1
-        </button>
-        <!--<script type "text/javascript">
-               document.getElementById("event1Button").onclick = function(){
-                 location.href = "templates\details.html"
-               };
-        </script>      -->
-      </ion-list>
-    </ion-content>
-  </ion-popover-view> -->
-
   <ion-popover-view>
     <ion-header-bar>
       <h1 class="title">{{ theDate }}</h1>
@@ -27,7 +8,6 @@
 			Event List for this day
 		</div>
 		<ion-list>
-
       <ion-item ng-repeat="event in arrayEventsForSelectedDay" ng-click="eventItemClicked($index)" >
 		  {{event.title}}
 		</ion-item>
@@ -36,16 +16,3 @@
     </ion-content>
   </ion-popover-view>
 
-
-
-    <!--<ion-popover-view>
-    <ion-header-bar>
-      <h1 class="title">{{ theDate }}</h1>
-    </ion-header-bar>
-    <ion-content scroll="true" ng-repeat="event in eventsForToday">
-      List the events for this day
-      <ion-list>
-        <ion-item>{{ event }}</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-popover-view>-->
