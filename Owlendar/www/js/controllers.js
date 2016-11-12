@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-angular.module('starter.controllers', [])
+angular.module('owlendar.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover,$filter) {
+.controller('OwlendarCtrl', function ($scope, $ionicModal, $timeout, $ionicPopover, $filter) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -22,19 +21,21 @@ var y = date.getFullYear();
     
         // your event source
         {
+            //trying to get holidays from google?
+            googleCalendarApiKey: '<YOUR API KEY>',
             events: [ // put the array in the `events` property
                 {
                     title  : 'event1',
-                    start  : '2016-10-11'
+                    start  : '2016-10-11 12:30:00'
                 },
                 {
                     title  : 'event2',
-                    start  : '2016-10-11',
-                    end    : '2016-10-14'
+                    start  : '2016-10-11 3:30:00',
+                    end    : '2016-10-14 12:30:00'
                 },
                 {
                     title  : 'event3',
-                    start  : '2016-10-09T12:30:00',
+                    start  : '2016-10-09 12:30:00',
                 },
 				{
                     title  : 'Yesterday Event',
@@ -57,9 +58,15 @@ var y = date.getFullYear();
 					eventUrl  : "http://www.yahoo.com",
                 }
             ],
-            color: 'orange',     // an option!
-            textColor: 'white' // an option!
-        }
+            //color: 'orange',     // an option!
+            //textColor: 'white' // an option!
+        },
+      //google api source? Doesnt work
+            {
+                googleCalendarId: 'abcd1234@group.calendar.google.com',
+                color: 'yellow',   // an option!
+                textColor: 'black' // an option!
+            }
   ];
 
   // Event click
@@ -67,28 +74,17 @@ var y = date.getFullYear();
 		 
      $scope.dayClick(calEvent.start, undefined, undefined,undefined);
 }
-=======
-angular.module('owlendar.controllers', [])
 
-    .controller('OwlendarCtrl', function ($scope, $ionicModal, $timeout, $ionicPopover) {
-
-        // With the new view caching in Ionic, Controllers are only called
-        // when they are recreated or on app start, instead of every page change.
-        // To listen for when this page is active (for example, to refresh data),
-        // listen for the $ionicView.enter event:
-        // $scope.$on('$ionicView.enter', function(e) {
-        // });
-
->>>>>>> origin/master
-
-        //CALENDAR!
-        //https://fullcalendar.io/docs/event_data/eventSources/
-        $scope.eventSources = [
-
-
-<<<<<<< HEAD
+ $scope.dayClick = function (date, jsEvent, view, resourceObj) {
+     
+     //$(this).css('background-color', 'gold');
+    $scope.theDate = date.format('ddd, MMMM DD, YYYY');
+     
     // date for Selected day
-    $scope.selectedDate = $filter('date')(new Date(date), 'MMM dd, yyyy');	  
+     
+    // 2016-10-09 12:30:00
+     //yyyy-MM-dd HH:mm:ss
+    $scope.selectedDate =  date.format('YYYY-MM-DD'); //$filter('date')(new Date(date), 'MMMM-dd-yyyy');	  
 	  console.log("selectedDate : ",+$scope.selectedDate);
 	  
 	  $scope.arrayEventsForSelectedDay = [];
@@ -100,7 +96,8 @@ angular.module('owlendar.controllers', [])
 	  // Get events for selected date
 	  events.forEach(function(event){
 		  
-		  var eventDate = $filter('date')(new Date(event.start), 'MMM dd, yyyy');
+          //var dateStart = $filter('date')(new Date(event.start));
+		  var eventDate = $filter('date')(new Date(event.start), 'yyyy-MM-dd');
 		  
 		  if ($scope.selectedDate == eventDate) {
 			 $scope.arrayEventsForSelectedDay.push(event);			 
@@ -122,65 +119,6 @@ angular.module('owlendar.controllers', [])
 			 return false;
         }
 	}
-=======
-
-            // your event source
-            {
-
-                //trying to get holidays from google?
-                googleCalendarApiKey: '<YOUR API KEY>',
-                events: [ // put the array in the `events` property
-                    {
-                        title: 'Day Event',
-                        start: '2016-11-11'
-                    },
-                    {
-                        title: 'Week long test event',
-                        start: '2016-11-14',
-                        end: '2016-11-19'
-                    },
-                    {
-                        title: 'event3',
-                        start: '2016-11-09T12:30:00',
-                    }
-                ],
-                //color: 'black',     // an option!
-                //textColor: 'white' // an option!
-            },
-
-            //google api source? Doesnt work
-            {
-                googleCalendarId: 'abcd1234@group.calendar.google.com',
-                color: 'yellow',   // an option!
-                textColor: 'black' // an option!
-            }
-
-            // any other event sources...
-
-        ];
->>>>>>> origin/master
-
-
-
-        $scope.dayClick = function (date, jsEvent, view, resourceObj) {
-
-            //$(this).css('background-color', 'gold');
-            $scope.theDate = date.format('ddd, MMMM DD, YYYY ');
-
-
-            //https://fullcalendar.io/docs/event_data/clientEvents/
-            //$scope.eventsForToday = $('#calendar').fullCalendar('clientEvents', [])
-
-            //$scope.eventsForToday = uiConfig.calendar.myCalendar.fullCalendar('clientEvents', []);
-
-
-            //$scope.eventsForToday = myCalendar.fullCalendar('clientEvents', []);
-            //alert($('.calendar').fullCalendar('clientEvents', []));
-            $scope.popover.show(jsEvent, $scope);
-            //alert('Date: ' + date.format('ddd, MMMM DD, YYYY '));
-            //alert('Resource ID: ' + resourceObj.id);
-
-        }
 
 
         // .fromTemplateUrl() method
@@ -213,11 +151,6 @@ angular.module('owlendar.controllers', [])
         $scope.openModal = function () {
             $scope.modal.show(jsEvent, $scope);
         };
-
-
-
-
-
 
 
         $scope.uiConfig = {
