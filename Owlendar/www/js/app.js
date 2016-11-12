@@ -44,11 +44,16 @@ angular.module('owlendar', ['ionic', 'owlendar.controllers', 'ui.calendar'])
       }
     })
 
-  .state('app.details', {
+
+//detail.html page! Need to figure this out to display additional data from event.
+  .state('details', {
       url: '/details',
       views: {
+        'details': {
+          templateUrl: 'templates/details.html'
+        }
       }
-    })
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/calendar');

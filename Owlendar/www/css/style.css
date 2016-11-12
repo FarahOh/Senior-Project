@@ -34,7 +34,16 @@
 }
 
 .popover {
-    background: goldenrod;
+    background: goldenrod !important;
     width: 90%;
     height: 50%;
+}
+
+.calendar{
+  background: white
+}
+
+/* today object*/
+.fc-unthemed .fc-today {
+	background: lightgrey !important;
 }

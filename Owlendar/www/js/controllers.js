@@ -19,7 +19,8 @@ angular.module('owlendar.controllers', [])
         // your event source
         {
 
-          googleCalendarApiKey: 'AIzaSyAO5t25v8uhli-UJKkyitYJhGdJPr4d6EE',
+          //trying to get holidays from google?
+          googleCalendarApiKey: '<YOUR API KEY>',
             events: [ // put the array in the `events` property
                 {
                     title  : 'Day Event',
@@ -39,6 +40,7 @@ angular.module('owlendar.controllers', [])
             //textColor: 'white' // an option!
         },
 
+        //google api source? Doesnt work
         {
             googleCalendarId: 'abcd1234@group.calendar.google.com',
             color: 'yellow',   // an option!
@@ -117,37 +119,5 @@ angular.module('owlendar.controllers', [])
             $log.debug("View Changed: ", view.visStart, view.visEnd, view.start, view.end);
         }
     }
-  };
-
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
   };
 });
