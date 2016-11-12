@@ -12,7 +12,7 @@ Basically, we are creating a mobile app, "Student Engagement App," that is cross
    --Grab data fields to find out which data we are going to use! (Whats given to us? What do we want to use?)
    ---Store event data locally (local database system)
    ---Get clientEvents functionality working correctly.
-   -Get popover to display the events.- Farah
+   -Get popover to display the events.- Farah/Zach (Can display events. Just need to get the day's events)
    --Ordered by time.
    -Month location (Bootstrap) - Kyle (Done)
    -Calendar height to match screen height. - Kyle (Done/TEST?)

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ui.calendar'])
+angular.module('owlendar', ['ionic', 'owlendar.controllers', 'ui.calendar'])
 
 
 //runs at startup and this is what executes the poll for events
@@ -28,11 +28,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.calendar'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'OwlendarCtrl'
   })
 
   .state('app.calendar', {
@@ -43,6 +43,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ui.calendar'])
         }
       }
     })
+
+
+//detail.html page! Need to figure this out to display additional data from event.
+  .state('app.details', {
+      url: '/details',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/details.html'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/calendar');

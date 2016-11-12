@@ -2,9 +2,18 @@
     <ion-header-bar>
       <h1 class="title">{{ theDate }}</h1>
     </ion-header-bar>
+    <ion-nav-view name="details"></ion-nav-view>
     <ion-content scroll="true">
-      List the events for this day
-      {{ eventsForToday }}
+      <ion-list>
+        <button class="button button-full button-stable" id = 'event1Button' ng-click="modal.show()">
+            Event 1
+        </button>
+        <!--<script type "text/javascript">
+               document.getElementById("event1Button").onclick = function(){
+                 location.href = "templates\details.html"
+               };
+        </script>      -->
+      </ion-list>
     </ion-content>
   </ion-popover-view> -->
 
