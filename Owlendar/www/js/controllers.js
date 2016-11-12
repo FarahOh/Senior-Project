@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover,$filter) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -12,54 +12,101 @@ angular.module('starter.controllers', [])
 
   //CALENDAR!
   //https://fullcalendar.io/docs/event_data/eventSources/
+  var date = new Date();
+var d = date.getDate();
+var m = date.getMonth();
+var y = date.getFullYear();
+
   $scope.eventSources = [
     
         // your event source
         {
             events: [ // put the array in the `events` property
                 {
-                    title  : 'Day Event',
-                    start  : '2016-11-11'
+                    title  : 'event1',
+                    start  : '2016-10-11'
                 },
                 {
-                    title  : 'Week long test event',
-                    start  : '2016-11-14',
-                    end    : '2016-11-19'
+                    title  : 'event2',
+                    start  : '2016-10-11',
+                    end    : '2016-10-14'
                 },
                 {
                     title  : 'event3',
-                    start  : '2016-11-09T12:30:00',
+                    start  : '2016-10-09T12:30:00',
+                },
+				{
+                    title  : 'Yesterday Event',
+                    start  : new Date(y, m, d - 1, 16, 0),
+					eventUrl  : "http://www.twitter.com",
+                },
+				{
+                    title  : 'Today Event',
+                    start  : new Date(y, m, d, 16, 0),
+					eventUrl  : "http://www.google.com",
+                },
+				{
+                    title  : 'Tomorrow Event',
+                    start  : new Date(y, m, d + 1, 16, 0),					
+					eventUrl  : "http://www.facebook.com",
+                },
+				{
+                    title  : 'Tomorrow Event 1',
+                    start  : new Date(y, m, d + 1, 16, 0),
+					eventUrl  : "http://www.yahoo.com",
                 }
             ],
-            //color: 'black',     // an option!
-            //textColor: 'white' // an option!
+            color: 'orange',     // an option!
+            textColor: 'white' // an option!
         }
-
-        // any other event sources...
-
   ];
 
-  
+  // Event click
+ $scope.alertEventOnClick = function(calEvent, jsEvent, view) {
+		 
+     $scope.dayClick(calEvent.start, undefined, undefined,undefined);
+}
 
   $scope.dayClick = function(date, jsEvent, view, resourceObj) {
 
     //$(this).css('background-color', 'gold');
     $scope.theDate = date.format('ddd, MMMM DD, YYYY ');
 
+    // date for Selected day
+    $scope.selectedDate = $filter('date')(new Date(date), 'MMM dd, yyyy');	  
+	  console.log("selectedDate : ",+$scope.selectedDate);
+	  
+	  $scope.arrayEventsForSelectedDay = [];
 
-    //https://fullcalendar.io/docs/event_data/clientEvents/
-    $scope.eventsForToday = $('#calendar').fullCalendar('clientEvents', [])
-
-    //$scope.eventsForToday = uiConfig.calendar.myCalendar.fullCalendar('clientEvents', []);
-
-
-    //$scope.eventsForToday = myCalendar.fullCalendar('clientEvents', []);
-    //alert($('.calendar').fullCalendar('clientEvents', []));
+	  // Get all events
+	  var events = $scope.eventSources[0].events;
+	  console.log("events : "+ events);
+	  
+	  // Get events for selected date
+	  events.forEach(function(event){
+		  
+		  var eventDate = $filter('date')(new Date(event.start), 'MMM dd, yyyy');
+		  
+		  if ($scope.selectedDate == eventDate) {
+			 $scope.arrayEventsForSelectedDay.push(event);			 
+		  }
+	  })
+	  
+	console.log("arrayEventsForSelectedDay : "+ $scope.arrayEventsForSelectedDay );
+	  
     $scope.popover.show(jsEvent, $scope);
-    //alert('Date: ' + date.format('ddd, MMMM DD, YYYY '));
-    //alert('Resource ID: ' + resourceObj.id);
 
   }
+  
+   $scope.eventItemClicked = function($index){
+		
+		var event = $scope.arrayEventsForSelectedDay[$index];
+		if (event.eventUrl) {	
+
+			 window.open(event.eventUrl, '_blank');
+			 return false;
+        }
+	}
 
 
   // .fromTemplateUrl() method
