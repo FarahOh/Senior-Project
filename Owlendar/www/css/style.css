@@ -32,3 +32,9 @@
 .custom a {
   color: white;  /*Text color for each item, overrides the color property above*/
 }
+
+.popover {
+    background: goldenrod;
+    width: 90%;
+    height: 50%;
+}

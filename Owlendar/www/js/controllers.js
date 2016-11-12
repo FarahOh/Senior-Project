@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('owlendar.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
+.controller('OwlendarCtrl', function($scope, $ionicModal, $timeout, $ionicPopover) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -13,9 +13,13 @@ angular.module('starter.controllers', [])
   //CALENDAR!
   //https://fullcalendar.io/docs/event_data/eventSources/
   $scope.eventSources = [
+
+    
     
         // your event source
         {
+
+          googleCalendarApiKey: 'AIzaSyAO5t25v8uhli-UJKkyitYJhGdJPr4d6EE',
             events: [ // put the array in the `events` property
                 {
                     title  : 'Day Event',
@@ -33,13 +37,19 @@ angular.module('starter.controllers', [])
             ],
             //color: 'black',     // an option!
             //textColor: 'white' // an option!
+        },
+
+        {
+            googleCalendarId: 'abcd1234@group.calendar.google.com',
+            color: 'yellow',   // an option!
+            textColor: 'black' // an option!
         }
 
         // any other event sources...
 
   ];
 
-  
+
 
   $scope.dayClick = function(date, jsEvent, view, resourceObj) {
 
@@ -48,7 +58,7 @@ angular.module('starter.controllers', [])
 
 
     //https://fullcalendar.io/docs/event_data/clientEvents/
-    $scope.eventsForToday = $('#calendar').fullCalendar('clientEvents', [])
+    //$scope.eventsForToday = $('#calendar').fullCalendar('clientEvents', [])
 
     //$scope.eventsForToday = uiConfig.calendar.myCalendar.fullCalendar('clientEvents', []);
 
@@ -140,18 +150,4 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
