@@ -115,7 +115,7 @@ var y = date.getFullYear();
 		var event = $scope.arrayEventsForSelectedDay[$index];
 		if (event.eventUrl) {	
 
-			 window.open(event.eventUrl, '_blank');
+			 $scope.getDetails();
 			 return false;
         }
 	}
@@ -134,24 +134,25 @@ var y = date.getFullYear();
         });
 
 
+        // Form data for the login modal
+        $scope.detailsData = {};
 
+        // Create the login modal that we will use later
         $ionicModal.fromTemplateUrl('templates/details.html', {
             scope: $scope
         }).then(function (modal) {
             $scope.modal = modal;
         });
 
-
-        $scope.modal = $ionicModal.fromTemplate('templates/details.html', {
-            scope: $scope
-        });
-
-
-
-        $scope.openModal = function () {
-            $scope.modal.show(jsEvent, $scope);
+        // Triggered in the login modal to close it
+        $scope.closeDetails = function () {
+            $scope.modal.hide();
         };
 
+        // Open the login modal
+        $scope.getDetails = function () {
+            $scope.modal.show();
+        };
 
         $scope.uiConfig = {
             calendar: {
