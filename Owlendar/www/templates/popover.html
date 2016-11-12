@@ -5,17 +5,14 @@
     <ion-nav-view name="details"></ion-nav-view>
     <ion-content scroll="true">
       <ion-list>
-        <button class="button button-full button-stable" id = 'event1Button' onClick="open('templates\details.html');return false;">
+        <button class="button button-full button-stable" id = 'event1Button' ng-click="modal.show()">
             Event 1
         </button>
-        <button class="button button-full button-stable"   href="/app/details">
-          Event 2
-        </button>
-        <script type "text/javascript">
+        <!--<script type "text/javascript">
                document.getElementById("event1Button").onclick = function(){
                  location.href = "templates\details.html"
                };
-        </script>      
+        </script>      -->
       </ion-list>
     </ion-content>
   </ion-popover-view>

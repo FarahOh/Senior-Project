@@ -46,10 +46,10 @@ angular.module('owlendar', ['ionic', 'owlendar.controllers', 'ui.calendar'])
 
 
 //detail.html page! Need to figure this out to display additional data from event.
-  .state('details', {
+  .state('app.details', {
       url: '/details',
       views: {
-        'details': {
+        'menuContent': {
           templateUrl: 'templates/details.html'
         }
       }
