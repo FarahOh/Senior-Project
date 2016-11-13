@@ -9,6 +9,7 @@ angular.module('owlendar.controllers', [])
   // $scope.$on('$ionicView.enter', function(e) {
   // });
 
+    $scope.arrayEventsForSelectedDay = [];
 
   //CALENDAR!
   //https://fullcalendar.io/docs/event_data/eventSources/
@@ -26,34 +27,41 @@ var y = date.getFullYear();
             events: [ // put the array in the `events` property
                 {
                     title  : 'event1',
+                    desc  : 'event Desc',
                     start  : '2016-10-11 12:30:00'
                 },
                 {
                     title  : 'event2',
+                    desc  : 'event2 Desc',
                     start  : '2016-10-11 3:30:00',
                     end    : '2016-10-14 12:30:00'
                 },
                 {
                     title  : 'event3',
+                    desc  : 'event3 Desc',
                     start  : '2016-10-09 12:30:00',
                 },
 				{
                     title  : 'Yesterday Event',
+                    desc  : 'Yesterday Event Desc',
                     start  : new Date(y, m, d - 1, 16, 0),
 					eventUrl  : "http://www.twitter.com",
                 },
 				{
                     title  : 'Today Event',
+                    desc  : 'Today Event Desc',
                     start  : new Date(y, m, d, 16, 0),
 					eventUrl  : "http://www.google.com",
                 },
 				{
                     title  : 'Tomorrow Event',
+                    desc  : 'Tomorrow Event Desc',
                     start  : new Date(y, m, d + 1, 16, 0),					
 					eventUrl  : "http://www.facebook.com",
                 },
 				{
                     title  : 'Tomorrow Event 1',
+                    desc  : 'Tomorrow Event 1 Desc',
                     start  : new Date(y, m, d + 1, 16, 0),
 					eventUrl  : "http://www.yahoo.com",
                 }
@@ -87,8 +95,6 @@ var y = date.getFullYear();
     $scope.selectedDate =  date.format('YYYY-MM-DD'); //$filter('date')(new Date(date), 'MMMM-dd-yyyy');	  
 	  console.log("selectedDate : ",+$scope.selectedDate);
 	  
-	  $scope.arrayEventsForSelectedDay = [];
-
 	  // Get all events
 	  var events = $scope.eventSources[0].events;
 	  console.log("events : "+ events);
@@ -112,12 +118,12 @@ var y = date.getFullYear();
   
    $scope.eventItemClicked = function($index){
 		
-		var event = $scope.arrayEventsForSelectedDay[$index];
-		if (event.eventUrl) {	
-
-			 $scope.getDetails();
-			 return false;
-        }
+       var event = $scope.arrayEventsForSelectedDay[$index];
+       
+       $scope.selectedEvent = event;
+       
+       $scope.getDetails();
+		
 	}
 
 
@@ -152,6 +158,14 @@ var y = date.getFullYear();
         // Open the login modal
         $scope.getDetails = function () {
             $scope.modal.show();
+        };
+    
+        // Open the login modal
+        $scope.openEventUrl = function () {
+            if ($scope.selectedEvent.eventUrl) {
+                
+                window.open($scope.selectedEvent.eventUrl, '_blank');
+            }
         };
 
         $scope.uiConfig = {
