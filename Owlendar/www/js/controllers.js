@@ -65,6 +65,13 @@ var y = date.getFullYear();
                     desc  : 'Tomorrow Event 1 Desc',
                     start  : new Date(y, m, d + 1, 16, 0),
 					eventUrl  : "http://www.yahoo.com",
+                },
+				{
+                    title  : 'American Red Cross Blood Drive- Marietta',
+                    desc  : 'Tomorrow Event 1 Desc',
+                    start  : '2016-11-29 12:00:00',
+                    end    : '2016-11-29 17:00:00',
+					eventUrl  : "http://www.yahoo.com",
                 }
             ],
             //color: 'orange',     // an option!
