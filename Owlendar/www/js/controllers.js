@@ -18,6 +18,7 @@ var d = date.getDate();
 var m = date.getMonth();
 var y = date.getFullYear();
 
+
   $scope.eventSources = [
     
         // your event source
@@ -138,6 +139,24 @@ var y = date.getFullYear();
         $scope.popover = $ionicPopover.fromTemplate('templates/popover.html', {
             scope: $scope
         });
+
+        //Cleanup the popover when we're done with it!
+        $scope.$on('$destroy', function () {
+            $scope.popover.remove();
+        });
+        // Execute action on hidden popover
+        $scope.$on('popover.hidden', function () {
+            // Execute action
+        });
+        // Execute action on remove popover
+        $scope.$on('popover.removed', function () {
+            // Execute action
+        });
+
+
+
+
+
 
 
         // Form data for the login modal

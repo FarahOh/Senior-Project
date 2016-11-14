@@ -1,18 +1,13 @@
-  <ion-popover-view>
-    <ion-header-bar>
-      <h1 class="title">{{ theDate }}</h1>
-    </ion-header-bar>
-    <ion-content scroll="true">
-		
-		<div class="item item-divider">
-			Event List for this day
-		</div>
+<ion-popover-view>
+	<ion-header-bar class="bar bar-header bar-dark">
+		<h1 class="title">{{ theDate }}</h1>
+	</ion-header-bar>
+	<ion-content scroll="true">
 		<ion-list>
-      <ion-item ng-repeat="event in arrayEventsForSelectedDay" ng-click="eventItemClicked($index)"  >
-		  {{event.title}}
-		</ion-item>
+			<ion-item class="ionitem" ng-repeat="event in arrayEventsForSelectedDay" ng-click="eventItemClicked($index)">
+				{{event.title}}
+			</ion-item>
 		</ion-list>
-		
-    </ion-content>
-  </ion-popover-view>
 
+	</ion-content>
+</ion-popover-view>

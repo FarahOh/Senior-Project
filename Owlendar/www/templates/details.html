@@ -1,24 +1,56 @@
-<ion-modal-view>
-	<ion-header-bar>
-		<h1 class="title">{{selectedEvent.title}}</h1>
+<ion-modal-view >
+	<ion-header-bar class="bar bar-header bar-dark">
+		<h1 class="title">Details</h1>
 		
 	</ion-header-bar>
     
     <ion-content scroll="true">
-		
-        <div>
-            <p>{{selectedEvent.desc}}</p>
-            
-        </div>
+
+        <ion-list>
+            <ion-item>
+                Event: {{ selectedEvent.title }}
+            </ion-item>
+            <ion-item>
+                Time: {{ selectedEvent.start }}
+            </ion-item>
+            <ion-item>
+                Location: {{ selectedEvent.location }}
+            </ion-item>
+            <ion-item>
+                Department: {{ selectedEvent.department }}
+            </ion-item>
+        </ion-list>
         
-        <ion-item style="color:blue"  ng-click="openEventUrl()">
-            {{selectedEvent.eventUrl}}
-        </ion-item>
-        
-        <label class="item">
-          <button class="button button-block button-positive" ng-click="closeDetails()"> Close </button>
-        </label>
+        <button class="button button-block button-dark" ng-click="openEventUrl()">
+            Event Page
+        </button>
+
+        <button class="button button-block button-dark" ng-click="closeDetails()"> 
+            Close 
+        </button>
+
         
     </ion-content>
     
 </ion-modal-view>
+
+
+
+<item>
+	<title>
+		<![CDATA[
+        KSU ACF - Giving Thanks Potluck - Student Center ST214 (25) Staff Lounge
+        ]]>
+	</title>
+	<description xml:space="preserve">
+		<![CDATA[ 5:00 PM to 7:30 PM ]]>
+	</description>
+	<author>ewells7@kennesaw.edu (Emily Roland Wells)</author>
+	<category>Dinner</category>
+	<pubDate>Tue, 15 Nov 2016 22:00:00 GMT</pubDate>
+	<link> https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7JmkwjAp30c%2fHYl%2fw6zDOV5rikI8HES93bc3RUMpisGvx3NwE0ZZvn
+	</link>
+	<guid>
+		https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7JmkwjAp30c%2fHYl%2fw6zDOV5rikI8HES93bc3RUMpisGvx3NwE0ZZvn
+	</guid>
+</item>
