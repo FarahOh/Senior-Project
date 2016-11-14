@@ -9,7 +9,7 @@ angular.module('owlendar.controllers', [])
   // $scope.$on('$ionicView.enter', function(e) {
   // });
 
-    $scope.arrayEventsForSelectedDay = [];
+    
 
   //CALENDAR!
   //https://fullcalendar.io/docs/event_data/eventSources/
@@ -97,6 +97,7 @@ var y = date.getFullYear();
     $scope.theDate = date.format('ddd, MMMM DD, YYYY');
      
     // date for Selected day
+     $scope.arrayEventsForSelectedDay = [];
      
     // 2016-10-09 12:30:00
      //yyyy-MM-dd HH:mm:ss
@@ -143,9 +144,9 @@ var y = date.getFullYear();
         });
 
 
-        $scope.popover = $ionicPopover.fromTemplate('templates/popover.html', {
-            scope: $scope
-        });
+        //$scope.popover = $ionicPopover.fromTemplate('templates/popover.html', {
+          //  scope: $scope
+        //});
 
         //Cleanup the popover when we're done with it!
         $scope.$on('$destroy', function () {
@@ -159,12 +160,6 @@ var y = date.getFullYear();
         $scope.$on('popover.removed', function () {
             // Execute action
         });
-
-
-
-
-
-
 
         // Form data for the login modal
         $scope.detailsData = {};
