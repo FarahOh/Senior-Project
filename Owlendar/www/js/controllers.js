@@ -26,57 +26,168 @@ var y = date.getFullYear();
             //trying to get holidays from google?
             googleCalendarApiKey: '<YOUR API KEY>',
             events: [ // put the array in the `events` property
+                 {
+                    title  : 'Blood Drive',
+                    description  : 'Proect Service',
+                    start  : '2016-11-2 10:30:00', 
+                    end : '2016-11-2 16:30:00',
+                    location : 'Student Center Ballroom',
+                    department : 'Volunteerism', 
+                    eventUrl : 'www.kennesaw.edu'
+                },
+                {
+                    title  : 'Library 101 Walk-In Session',
+                    description  : 'Join us for an introduction to online library resources. Learn about all the resources KSUs libraries have to offer students to enhance your academic success. Presented by Rita Spisak, KSU Librarian.',
+                    start  : '2016-11-9 11:30:00', 
+                    end : '2016-11-9 12:30:00',
+                    location : 'Student Center Room 261',
+                    department : 'Adult and Commuter Affairs', 
+                    eventUrl : 'http://studentengagement.kennesaw.edu/acsa/events.php'
+                },
+                {
+                    title  : 'Friendsgiving: Breakfast for Thanksgiving',
+                    description  : 'The Odyssey Peer Mentoring Program will be hosting our Friendsgiving: Breakfast for Thanksgiving event. Friendsgiving is open to all KSU student and includes a free breakfast along with socializing and networking with other students. Additionally, the Odyssey Peer Mentoring Program is conducting a food and toiletry drive for people in need during the holiday season. Feel free to drop off non-perishable food items and toiletries during the event or to room 261 in the Student Center.',
+                    start  : '2016-11-10 8:00:00', 
+                    end : '2016-11-10 10:00:00',
+                    location : 'Student Center Leadership Room',
+                    department : 'Odyssey Peer Mentoring Program', 
+                    eventUrl : 'http://studentengagement.kennesaw.edu/acsa/odyssey/events/upcoming-events.php'
+                },
                 {
                     title  : 'KSU ACF - Giving Thanks Potluck',
-                    desc  : 'Dinner event',
-                    start  : '2016-11-15 5:00:00', 
-                    end : '2016-11-15 7:30:00',
+                    description  : 'Dinner event',
+                    start  : '2016-11-15 17:00:00', 
+                    end : '2016-11-15 19:30:00',
                     location : 'Student Center ST214 (25) Staff Lounge',
                     department : 'Multicultural Student Retention Services', 
                     eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7JmkwjAp30c%2fHYl%2fw6zDOV5rikI8HES93bc3RUMpisGvx3NwE0ZZvn'
                 },
                 {
-                    title  : 'event2',
-                    desc  : 'event2 Desc',
-                    start  : '2016-10-11 3:30:00',
-                    end    : '2016-10-14 12:30:00'
+                    title  : 'Student Life Progr - Movie and Mug Night',
+                    description  : 'Information Table event',
+                    start  : '2016-11-15 18:30:00',
+                    end : '2016-11-15 21:30:00',
+                    location : 'J.M Wilson Student Center (M) A200 (50) Lobby',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J6GJqP4tMKLUTN0Lyr7lxRJX2OuwW0hNt4BDQmcIQNdeDEzdAQR8bvt'
                 },
                 {
-                    title  : 'event3',
-                    desc  : 'event3 Desc',
-                    start  : '2016-10-09 12:30:00',
+                    title  : 'Student Life Progr - Movie and Mug Night',
+                    description  : 'Service Project event',
+                    start  : '2016-11-15 19:00:00',
+                    end : '2016-11-15 21:30:00',
+                    location : 'J.M Wilson Student Center (M) A201 A&B Ballroom Combo',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J6GJqP4tMKLUTN0Lyr7lxRJX2OuwW0hNt4TE72R5M3mjdP21YtajcKR'
                 },
 				{
-                    title  : 'Yesterday Event',
-                    desc  : 'Yesterday Event Desc',
-                    start  : new Date(y, m, d - 1, 16, 0),
-					eventUrl  : "http://www.twitter.com",
+                    title  : 'ISP Staff Meeting',
+                    description  : ' Meeting event',
+                    start  : '2016-11-16 10:00:00',
+                    end : '2016-11-16 12:30:00',
+                    location : '',
+                    department : 'Student Engagement', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J4soiZvVpV8s77%2fgksIjAUqBdB5IH060PmmR%2bWSFbn%2bsLY1jn1N%2bQw7'
                 },
 				{
-                    title  : 'Today Event',
-                    desc  : 'Today Event Desc',
-                    start  : new Date(y, m, d, 16, 0),
-					eventUrl  : "http://www.google.com",
+                    title  : 'St. Paul Street Church Evangelism - Freedom of Assembly',
+                    description  : 'Information Table event',
+                    start  : '2016-11-17 10:00:00',
+                    end : '2016-11-17 11:30:00',
+                    location : 'Miscellaneous Fields and Outdoor Spaces (M) Globe Area (400)',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J5eNTOtorhuRGr2pTr6xxLWqW%2fCauwv8slKyzEJHyutPNhz%2bWkuoAEC'
                 },
 				{
-                    title  : 'Tomorrow Event',
-                    desc  : 'Tomorrow Event Desc',
-                    start  : new Date(y, m, d + 1, 16, 0),					
-					eventUrl  : "http://www.facebook.com",
+                    title  : 'AAMI Weekly Meeting/Seminar',
+                    description  : '',
+                    start  : '2016-11-17 14:30:00',
+                    end : '2016-11-17 15:30:00',
+                    location : 'Burruss Building BB371 (33) Classroom',
+                    department : 'Student Engagement', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7lHjLWtH7EGVy1r8r%2fY3VaOlIXgPslhSXNDM%2beJcuUDkUSyiY00nvH'
                 },
 				{
-                    title  : 'Tomorrow Event 1',
-                    desc  : 'Tomorrow Event 1 Desc',
-                    start  : new Date(y, m, d + 1, 16, 0),
-					eventUrl  : "http://www.yahoo.com",
+                    title  : 'RSO Classification Committee Meetings',
+                    description  : 'Meeting',
+                    start  : '2016-11-17 18:00:00',
+                    end : '2016-11-17 19:30:00',
+                    location : 'Student Center Room 214',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7DOCZRmTM1TkVQHMQAR5Lk53LFVP6iZV6wQHa8TAQDbNWJTWMTdlII'
                 },
 				{
-                    title  : 'American Red Cross Blood Drive- Marietta',
-                    desc  : 'Tomorrow Event 1 Desc',
+                    title  : 'SOS Student Worker Training',
+                    description  : '',
+                    start  : '2016-11-18 12:30:00',
+                    end : '2016-11-18 17:00:00',
+                    location : 'Student Center ST205 Leadership Room',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7OPU267x7HPISVnUM59HlfOyvWszVvkUyuRQfiWEBO8GDNTnXCEzhj'
+                },
+                {
+                    title  : 'Delta - Basketball Tournament',
+                    description  : 'Sports - Game/Match',
+                    start  : '2016-11-19 8:00:00',
+                    end : '2016-11-19 23:00:00',
+                    location : 'Gymnasium (M)',
+                    department : 'KSU Sports and Entertainment Park', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7OPU267x7HPISVnUM59HlfOyvWszVvkUyuRQfiWEBO8GDNTnXCEzhj'
+                },
+                {
+                    title  : 'Delta - Basketball Tournament',
+                    description  : 'Sports - Game/Match',
+                    start  : '2016-11-19 13:00:00',
+                    end : '2016-11-19 16:00:00',
+                    location : 'Gymnasium (M) Gym Court',
+                    department : 'KSU Sports and Entertainment Park', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J5jJnJMvall1B9GkSiqAYKZ3c4Ezx5bHIyHk9lDhbURl3ERRtntdAVW'
+                },
+                {
+                    title  : 'ISP Staff Meeting',
+                    description  : 'Meeting',
+                    start  : '2016-11-23 10:00:00',
+                    end : '2016-11-23 12:30:00',
+                    location : '0096 301',
+                    department : 'Student Engagement', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J4soiZvVpV8s77%2fgksIjAUqBdB5IH060PlRydTNSdPW66v53tI%2fHkhs'
+                },
+                {
+                    title  : 'Blood Drive',
+                    description  : 'Service Project',
                     start  : '2016-11-29 12:00:00',
-                    end    : '2016-11-29 17:00:00',
-					eventUrl  : "http://www.yahoo.com",
-                }
+                    end : '2016-11-29 17:30:00',
+                    location : 'J.M. Wilson Student Center (M) A201 A&B Ballroom Combo',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J4soiZvVpV8s77%2fgksIjAUqBdB5IH060PlRydTNSdPW66v53tI%2fHkhs'
+                },
+                {
+                    title  : 'Student Engagement SA/Tutor Lunch',
+                    description  : 'Luncheon',
+                    start  : '2016-11-29 12:00:00',
+                    end : '2016-11-29 14:00:00',
+                    location : 'Student Center ST205 (84) Leadership Room',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J4%2bqWUc5lRvnGM%2bubkgYBSJrUlRFXZZVwd745SEIxmH0OaPos4Xukya'
+                },
+                {
+                    title  : 'ISP Staff Meetings',
+                    description  : 'Meeting',
+                    start  : '2016-11-30 10:00:00',
+                    end : '2016-11-30 12:30:00',
+                    location : '0096 301',
+                    department : 'Student Life', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J4%2bqWUc5lRvnGM%2bubkgYBSJrUlRFXZZVwd745SEIxmH0OaPos4Xukya'
+                },
+                {
+                    title  : 'AAMI Weekly Meeting/Seminar',
+                    description  : 'Meeting',
+                    start  : '2016-12-1 14:30:00',
+                    end : '2016-12-1 15:30:00',
+                    location : 'Burruss Building BB371 (33) Classroom',
+                    department : 'Student Engagement', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7lHjLWtH7EGVy1r8r%2fY3VaOlIXgPslhSVn2iOMOYWmw%2fUim3r9Lu82'
+                },
             ],
             //color: 'orange',     // an option!
             //textColor: 'white' // an option!
