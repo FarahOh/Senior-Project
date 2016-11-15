@@ -27,9 +27,13 @@ var y = date.getFullYear();
             googleCalendarApiKey: '<YOUR API KEY>',
             events: [ // put the array in the `events` property
                 {
-                    title  : 'event1',
-                    desc  : 'event Desc',
-                    start  : '2016-10-11 12:30:00'
+                    title  : 'KSU ACF - Giving Thanks Potluck',
+                    desc  : 'Dinner event',
+                    start  : '2016-11-15 5:00:00', 
+                    end : '2016-11-15 7:30:00',
+                    location : 'Student Center ST214 (25) Staff Lounge',
+                    department : 'Multicultural Student Retention Services', 
+                    eventUrl : 'https://calendar.kennesaw.edu/EventDetails.aspx?data=hHr80o3M7J7JmkwjAp30c%2fHYl%2fw6zDOV5rikI8HES93bc3RUMpisGvx3NwE0ZZvn'
                 },
                 {
                     title  : 'event2',
