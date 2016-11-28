@@ -4,11 +4,15 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('owlendar', ['ionic', 'owlendar.controllers', 'ui.calendar'])
+
+var db = null;
+
+angular.module('owlendar', ['ionic','owlendar.services','owlendar.controllers', 'ui.calendar','owlendar.dbService'])
 
 
 //runs at startup and this is what executes the poll for events
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,dbService) {
+	
   //alert("startup");
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -22,6 +26,37 @@ angular.module('owlendar', ['ionic', 'owlendar.controllers', 'ui.calendar'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	  
+	  if (window.cordova && window.SQLitePlugin) { // because Cordova is platform specific and doesn't work when you run ionic serve
+
+			window.sqlitePlugin.echoTest(function () {
+				console.log('ECHO test OK');
+			});
+
+			window.sqlitePlugin.selfTest(function () {
+				console.log('SELF test OK');
+			});
+
+			db = window.sqlitePlugin.openDatabase({
+				name: 'owlendar.db',
+				location: 'default'
+			});
+		} else {
+
+			db = window.openDatabase("Owlendar", "1.0", "owlendar.db", 100 * 1024 * 1024); // browser webSql, a fall-back for debugging
+			//alert("browser db (WebSQL) loaded");
+		}
+
+		if (db) {
+
+			console.log("db should have been opened at this step");
+			dbService.createTables();
+			dbService.insertTestData();
+			
+		} else {
+			console.log("db not loaded");
+		}
+	  
   });
 })
 
