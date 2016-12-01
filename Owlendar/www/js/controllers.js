@@ -370,6 +370,7 @@ angular.module('owlendar.controllers', [])
 	//close button
 	$scope.closeDetails = function () {
 		$scope.modal.hide();
+		window.location.reload();//BANDAID FIX FOR POPOVER+MODAL BUG
 	};
 
 	// Open the login modal
