@@ -326,6 +326,7 @@ angular.module('owlendar.controllers', [])
 	$scope.eventItemClicked = function ($index) {
 
 		var event = $scope.arrayEventsForSelectedDay[$index];
+		//$scope.popover.remove(); bug still exists when popover is removed
 		$scope.selectedEvent = event;
 		$scope.getDetails();
 	}
@@ -336,7 +337,7 @@ angular.module('owlendar.controllers', [])
 	}).then(function (popover) {
 		$scope.popover = popover;
 	});
-
+	
 
 	//$scope.popover = $ionicPopover.fromTemplate('templates/popover.html', {
 	//  scope: $scope
@@ -364,8 +365,9 @@ angular.module('owlendar.controllers', [])
 	}).then(function (modal) {
 		$scope.modal = modal;
 	});
-
+	
 	// Triggered in the login modal to close it
+	//close button
 	$scope.closeDetails = function () {
 		$scope.modal.hide();
 	};
@@ -407,7 +409,7 @@ angular.module('owlendar.controllers', [])
 			alert('The calendar has adjusted to a window resize'); //remove on release
 		}
 	});
-
+	
 	$scope.calendarConfig = {
 		calendar: {
 			viewRender: function (view, element) {
@@ -415,4 +417,5 @@ angular.module('owlendar.controllers', [])
 			}
 		}
 	};
+	
 });

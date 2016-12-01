@@ -13457,6 +13457,7 @@ var ListViewGrid = Grid.extend({
 			'</td>' +
 		'</tr>';
 	}
+	
 
 });
 
